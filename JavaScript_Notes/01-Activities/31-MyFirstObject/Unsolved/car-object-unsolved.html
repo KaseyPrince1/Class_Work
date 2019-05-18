@@ -9,11 +9,12 @@
     <script>
 
       var car = {
-        make: "Honda",
-        model: "Fit",
-        color: "Blue Raspberry",
-        mileage: 3000,
-        isWorking: true,
+        "make": "Honda",
+        "model": "Fit",
+        "color": "Blue Raspberry",
+        "mileage": 3000,
+        "isWorking": true
+      };
 
         driveToWork: function() {
 
@@ -41,26 +42,31 @@
           this.isWorking = true;
         },
 
-        honk: function() {
+        Honk: function() {
           alert("Honk! Honk!");
-        }
+        };
+//
+      document.onkeyup(event) { 
+      var letter = event.key.toLowerCase();
+      if(letter === 'h'); {
+        car.Honk;
+        reWriteStats();
       };
 
-
-      // How would we log...
-
-      // The car's make?
-
-      // The car's model?
-
-      // The car's mileage?
-
-      // How would we run the car's driveToWork method?
-
-      // How would we run the car's driveAroundWorld method?
-
-      // How would we run the getTuneUp method?
-
+      document.onkeyup(event) {
+      var letter = event.key.toLowerCase();
+      if(letter === 'w'); {
+        car.driveAroundWorld;
+        reWriteStats();
+      };
+    
+      document.onkeyup(event) {
+      var letter = event.key.toLowerCase();
+      if(letter === 't');{
+        car.getTuneUp;
+        isWorking()
+      };
+   
     </script>
     
   </body>

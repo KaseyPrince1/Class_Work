@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <title>Kasey Prince Demo</title>
+</head>
+<body>
+<script type="text/javascript">
+    var Kasey = {
+        "real name": "Kasey",
+        "age (est)": 23,
+        "race": "Basic",
+        "haveRetirementPlan": true,
+        "designation": "Human",
+        "aliases": [
+        "KP",
+        "KitKat",
+        "KaseyP",
+        "Prince",
+        "KaseyPrince1"
+]
+};
+
+    alert("My name is " + Kasey["real name"]);
+
+    if (Kasey.haveRetirementPlan) {
+    var ageProperty = "age (est)";
+    var years = Kasey[ageProperty];
+    alert("My 401k has been gathering interest for " + years + "years!");
+    }
+    alert("I have more than " + Kasey.aliases.length + "aliases");
+    alert("##")
+    alert("My designation is " + Kasey["designation"]);
+    </script>
+</body>
+</html>

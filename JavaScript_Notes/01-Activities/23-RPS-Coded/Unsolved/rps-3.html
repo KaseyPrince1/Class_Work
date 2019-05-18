@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors Part 2
+  </title>
+</head>
+
+<body>
+
+  <div id="game">
+
+  </div>
+
+  <script type="text/javascript">
+
+    // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+    let computerChoices = ["r", "p", "s"];
+    let wins = localStorage.getItem("wins")
+    let losses = localStorage.getItem("losses")
+    let ties = localStorage.getItem("ties")
+    console.log(wins)
+    if(wins === null) {
+      wins = 0
+    }
+    else {
+      wins = localStorage.getItem("wins")
+    }
+    if(losses === null) {
+      losses = 0
+    } else {
+      losses = localStorage.getItem("losses")
+    }
+    if(ties === null) {
+      ties = 0
+    } else {
+      ties = localStorage.getItem("ties")
+    }
+    
+    //localStorage.setItem("wins","")
+
+    // This function is run whenever the user presses a key.
+    document.onkeyup = function(event) {
+
+      // Determines which key was pressed.
+      let userGuess = event.key;
+
+      // Randomly chooses a choice from the options array. This is the Computer's guess.
+      let choice = Math.floor(Math.random() * computerChoices.length)
+      let computerGuess = computerChoices[choice];
+      
+      if(userGuess === "r" && computerGuess === "s") {
+        wins++
+      } else if (userGuess === "p" && computerGuess === "r") {
+        wins++
+      } else if (userGuess === "s" && computerGuess === "p") {
+        wins++
+      } else if(userGuess === computerGuess) {
+        ties++
+      } else {
+        losses++
+      }
+      localStorage.setItem("wins",wins)
+      localStorage.setItem("losses",losses)
+      localStorage.setItem("ties",ties)
+      console.log("userGuess",userGuess,"computerGuess",computerGuess)
+      console.log("wins",wins)
+      console.log("losses",losses)
+      console.log("ties",ties)
+
+      // Alerts the key the user pressed (userGuess).
+      //console.log("User guess: " + userGuess);
+
+      // Alerts the Computer's guess.
+      //console.log("Computer guess: " + computerGuess);
+
+    };
+  </script>
+
+</body>
+
+</html>
